@@ -3,6 +3,7 @@ layout: project
 title: "Language App"
 description: "A simple LLM-powered language learning app. Practice conversations and get real-time feedback from AI."
 technologies: "Python, LLM APIs, NLP"
+status: dev
 date: 2024-02-01
 ---
 

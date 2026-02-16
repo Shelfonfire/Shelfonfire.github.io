@@ -8,12 +8,17 @@
 :root {
   --accent: #2d6a4f;
   --accent-light: #40916c;
+  --accent-subtle: #d8f3dc;
   --text: #1a1a2e;
-  --text-muted: #555;
+  --text-muted: #6b7280;
   --bg: #fafaf8;
   --card-bg: #fff;
-  --border: #e8e8e4;
-  --radius: 8px;
+  --border: #e5e7eb;
+  --border-hover: #d1d5db;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 /* ── Base ── */
@@ -88,7 +93,7 @@ a {
 
 .project-cards {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin-top: 1.5rem;
 }
 
@@ -96,53 +101,115 @@ a {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.5rem;
-  transition: box-shadow 0.2s, transform 0.2s;
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 
   &:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-hover);
+    transform: translateY(-3px);
   }
+}
+
+.project-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
 
   h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    color: var(--text-muted);
-    margin-bottom: 0.75rem;
+    margin: 0;
+    font-size: 1.2rem;
   }
 }
 
-.project-tech {
-  font-size: 0.85rem;
+.project-card-desc {
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
+
+/* ── Tech Tags ── */
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* ── Status Badges ── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.badge-live {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-dev {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* ── Project Links ── */
 
 .project-links {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 /* ── Buttons ── */
 
 .btn {
-  display: inline-block;
-  padding: 0.4rem 1rem;
-  border-radius: var(--radius);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-sm);
   font-size: 0.85rem;
   font-weight: 500;
   background: var(--accent);
   color: #fff !important;
   text-decoration: none;
-  transition: background 0.2s, transform 0.1s;
+  border: 1px solid var(--accent);
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  cursor: pointer;
+
+  svg {
+    flex-shrink: 0;
+  }
 
   &:hover {
     background: var(--accent-light);
+    border-color: var(--accent-light);
     transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(45, 106, 79, 0.2);
     color: #fff !important;
   }
 }
@@ -158,22 +225,64 @@ a {
   }
 }
 
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted) !important;
+  border: 1px solid transparent;
+  padding: 0.45rem 0.75rem;
+
+  &:hover {
+    color: var(--accent) !important;
+    background: var(--accent-subtle);
+  }
+}
+
 /* ── Project Detail Page ── */
 
-.project-header {
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
+.project-detail-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid var(--border);
 }
 
-.project-meta {
-  color: var(--text-muted);
-  font-size: 0.9rem;
+.project-detail-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+
+  h1 {
+    margin: 0;
+  }
 }
 
-.project-description {
+.project-detail-desc {
   font-size: 1.1rem;
   color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.project-detail-content {
+  h2 {
+    margin-top: 2.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  ul {
+    padding-left: 1.25rem;
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+  }
+}
+
+.project-detail-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
 }
 
 /* ── Lists ── */
@@ -187,5 +296,5 @@ ul {
 /* ── Home page ── */
 
 .post-list {
-  display: none; // hide default minima post list on home
+  display: none;
 }

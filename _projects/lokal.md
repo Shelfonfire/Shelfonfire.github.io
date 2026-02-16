@@ -3,6 +3,7 @@ layout: project
 title: "Lokal"
 description: "An app connecting consumers with small, local businesses. Discover what's nearby and support your community."
 technologies: "Next.js, React, Vercel"
+status: live
 demo: "https://lokal-tau.vercel.app/"
 date: 2024-01-15
 ---
