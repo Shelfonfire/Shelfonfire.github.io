@@ -1,0 +1,69 @@
+# Site settings
+title: Dan Edwards
+email: dce@edod.co.uk
+description: >-
+  Software developer building apps, tools, and experiments
+  at the intersection of AI and everyday problems.
+baseurl: ""
+url: "https://shelfonfire.github.io"
+
+# Author information
+author:
+  name: Dan Edwards
+  email: dce@edod.co.uk
+  github: ShelfOnFire
+  linkedin: danedwards01
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - .gitignore
+
+# Social links
+social_links:
+  github: ShelfOnFire
+  linkedin: danedwards01
+  email: dce@edod.co.uk
+
+# Navigation
+header_pages:
+  - index.md
+  - projects.md
+  - about.md
+  - contact.md

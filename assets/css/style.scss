@@ -1,0 +1,191 @@
+---
+---
+
+@import "minima";
+
+/* ── Smart Casual Override ── */
+
+:root {
+  --accent: #2d6a4f;
+  --accent-light: #40916c;
+  --text: #1a1a2e;
+  --text-muted: #555;
+  --bg: #fafaf8;
+  --card-bg: #fff;
+  --border: #e8e8e4;
+  --radius: 8px;
+}
+
+/* ── Base ── */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+}
+
+/* ── Typography ── */
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.4rem; margin-top: 2rem; }
+h3 { font-size: 1.15rem; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--accent-light);
+  }
+}
+
+/* ── Header ── */
+
+.site-header {
+  border-top: 3px solid var(--accent);
+  border-bottom: 1px solid var(--border);
+  background: var(--card-bg);
+}
+
+.site-title {
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+}
+
+.site-nav .page-link {
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+/* ── Footer ── */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ── Content ── */
+
+.wrapper {
+  max-width: 720px;
+}
+
+/* ── Project Cards ── */
+
+.project-cards {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+}
+
+.project-tech {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ── Buttons ── */
+
+.btn {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: var(--accent);
+  color: #fff !important;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+
+  &:hover {
+    background: var(--accent-light);
+    transform: translateY(-1px);
+    color: #fff !important;
+  }
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--accent) !important;
+  border: 1px solid var(--accent);
+
+  &:hover {
+    background: var(--accent);
+    color: #fff !important;
+  }
+}
+
+/* ── Project Detail Page ── */
+
+.project-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-meta {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+/* ── Lists ── */
+
+ul {
+  li {
+    margin-bottom: 0.4rem;
+  }
+}
+
+/* ── Home page ── */
+
+.post-list {
+  display: none; // hide default minima post list on home
+}
