@@ -29,6 +29,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
+  mcps:
+    output: true
+    permalink: /mcps/:name/
 
 # Defaults
 defaults:
@@ -65,4 +68,5 @@ social_links:
 header_pages:
   - index.md
   - projects.md
+  - mcps.md
   - contact.md

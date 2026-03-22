@@ -12,3 +12,7 @@ Since early 2024 I've been working at a fashion-tech startup building systems to
 ## Projects
 
 {% include project-cards.html %}
+
+## MCPs
+
+{% include mcp-cards.html %}
