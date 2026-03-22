@@ -3,8 +3,8 @@ layout: project
 title: "London Grapple MCP"
 description: "MCP server for London Grapple BJJ gym — timetables, today's classes, and instructor search across both mats."
 technologies: "Python, FastMCP, BeautifulSoup, httpx"
-status: dev
-endpoint: "https://app.gymdesk.com/widgets/schedule/render/gym/D8eb1"
+status: live
+endpoint: "https://ie34hkubddklctbkd73bfb7g2m0rmqdm.lambda-url.eu-west-2.on.aws/mcp"
 github: "https://github.com/Shelfonfire/mcp"
 date: 2026-03-08
 ---
@@ -21,7 +21,6 @@ A Model Context Protocol server for the London Grapple BJJ gym timetable. Scrape
 - **get_classes_today** — all classes happening today across both mats
 - **search_classes(query)** — search by class name or instructor
 
-## Expected Endpoints
+## MCP Endpoint
 
-- Mat 1 (HQ): `https://app.gymdesk.com/widgets/schedule/render/gym/D8eb1?visible_schedule=6X8d8`
-- Mat 2: `https://app.gymdesk.com/widgets/schedule/render/gym/D8eb1?visible_schedule=D8pqo`
+`https://ie34hkubddklctbkd73bfb7g2m0rmqdm.lambda-url.eu-west-2.on.aws/mcp`

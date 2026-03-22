@@ -3,8 +3,8 @@ layout: project
 title: "Peckhamplex Cinema MCP"
 description: "MCP server for Peckhamplex cinema showtimes — films, screenings by date, and accessibility info via the Veezi API."
 technologies: "Python, FastMCP, httpx, AWS Lambda"
-status: dev
-endpoint: "https://www.peckhamplex.london/api/v1/film"
+status: live
+endpoint: "https://tovxj6sddrwssxhbk4eepq5fpe0kzfqs.lambda-url.eu-west-2.on.aws/mcp"
 github: "https://github.com/Shelfonfire/mcp"
 date: 2026-03-10
 ---
@@ -25,8 +25,6 @@ A Model Context Protocol server that exposes Peckhamplex cinema data to AI assis
 
 Includes accessibility flags: autism-friendly, hard-of-hearing, and watch-with-baby screenings. Booking URLs returned for each showtime.
 
-## Expected Endpoint
+## MCP Endpoint
 
-`https://www.peckhamplex.london/api/v1/film`
-- `/by/title` — films grouped by title
-- `/by/dates` — films grouped by date
+`https://tovxj6sddrwssxhbk4eepq5fpe0kzfqs.lambda-url.eu-west-2.on.aws/mcp`
